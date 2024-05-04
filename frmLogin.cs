@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace buBilet
 {
@@ -15,6 +16,18 @@ namespace buBilet
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void login_to_register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRegister sform = new frmRegister();
+            sform.Show();
+            this.Hide();
+        }
+
+        private void xLabel_Click(object sender, EventArgs e)
+        {
+           this.Close();
         }
 
     }
