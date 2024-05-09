@@ -27,7 +27,7 @@ namespace buBilet
 
         private void xLabel_Click(object sender, EventArgs e)
         {
-           this.Close();
+           Application.Exit();
         }
 
     }

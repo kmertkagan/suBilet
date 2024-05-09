@@ -76,6 +76,7 @@
             this.Register_pswd.Name = "Register_pswd";
             this.Register_pswd.Size = new System.Drawing.Size(173, 27);
             this.Register_pswd.TabIndex = 3;
+            this.Register_pswd.UseSystemPasswordChar = true;
             // 
             // Register_pswdConfirm
             // 
@@ -83,6 +84,7 @@
             this.Register_pswdConfirm.Name = "Register_pswdConfirm";
             this.Register_pswdConfirm.Size = new System.Drawing.Size(173, 27);
             this.Register_pswdConfirm.TabIndex = 4;
+            this.Register_pswdConfirm.UseSystemPasswordChar = true;
             // 
             // Register_signUpButton
             // 
@@ -92,6 +94,7 @@
             this.Register_signUpButton.TabIndex = 5;
             this.Register_signUpButton.Text = "Kayıt Ol";
             this.Register_signUpButton.UseVisualStyleBackColor = true;
+            this.Register_signUpButton.Click += new System.EventHandler(this.Register_signUpButton_Click);
             // 
             // Register_showPswd
             // 
@@ -102,6 +105,7 @@
             this.Register_showPswd.TabIndex = 6;
             this.Register_showPswd.Text = "Şifre Göster:";
             this.Register_showPswd.UseVisualStyleBackColor = true;
+            this.Register_showPswd.CheckedChanged += new System.EventHandler(this.Register_showPswd_CheckedChanged);
             // 
             // label1
             // 
