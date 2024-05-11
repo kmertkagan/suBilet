@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using System.Data.SqlClient;
 using System.Security.Cryptography; // for password
-
+using System.Data.SqlTypes;
+using System.Drawing.Imaging;
 
 namespace buBilet
 {
@@ -46,35 +47,37 @@ namespace buBilet
             password_confirm = Register_pswdConfirm.Text;
 
             string[] checkList = {name_surname, tcId, gender, username, password, password_confirm};
-
+            bool AnyNulls = false;
             
 
             try
             {
                 connection.Open();
+
                 foreach (string i in checkList)
                 {
                     if (String.IsNullOrEmpty(i))
                     {
+                        AnyNulls = true;
                         MessageBox.Show("Lütfen İstenilen Tüm Bilgileri Doldurunuz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Register_pswd.Text = "";
                         Register_pswdConfirm.Text = "";
                         break;
-                    }
-                    else if (password != password_confirm)
-                    {
-                        MessageBox.Show("Şifreler Uyuşmuyor", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Register_pswd.Text = "";
-                        Register_pswdConfirm.Text = "";
-                        break;
-                    }
-                    else if (int.TryParse(tcId, out int num) != true || tcId.Length != 11) ;
-                    {
-                        MessageBox.Show("TC Hatalı", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Register_pswd.Text = "";
-                        Register_pswdConfirm.Text = "";
-                        break;
-                    }
+                    }                    
+                }
+                
+                if (password != password_confirm && AnyNulls == false)
+                { 
+                    MessageBox.Show("Şifreler Uyuşmuyor", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Register_pswd.Text = "";
+                    Register_pswdConfirm.Text = "";
+                    
+                }
+                else if ( (long.TryParse(tcId, out long num) == false || tcId.Length != 11) && AnyNulls == false) 
+                {
+                    MessageBox.Show("TC Hatalı", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Register_pswd.Text = "";
+                    Register_pswdConfirm.Text = "";
                 }
             }
             catch 
