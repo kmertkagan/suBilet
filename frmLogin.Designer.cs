@@ -52,6 +52,7 @@
             this.Login_pswd.Name = "Login_pswd";
             this.Login_pswd.Size = new System.Drawing.Size(184, 27);
             this.Login_pswd.TabIndex = 1;
+            this.Login_pswd.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -80,6 +81,7 @@
             this.Login_showPswd.TabIndex = 4;
             this.Login_showPswd.Text = "Parolayı Göster";
             this.Login_showPswd.UseVisualStyleBackColor = true;
+            this.Login_showPswd.CheckedChanged += new System.EventHandler(this.Login_showPswd_CheckedChanged);
             // 
             // Login_loginButton
             // 
@@ -89,6 +91,7 @@
             this.Login_loginButton.TabIndex = 5;
             this.Login_loginButton.Text = "Giriş Yap";
             this.Login_loginButton.UseVisualStyleBackColor = true;
+            this.Login_loginButton.Click += new System.EventHandler(this.Login_loginButton_Click);
             // 
             // label3
             // 

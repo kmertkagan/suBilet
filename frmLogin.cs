@@ -30,5 +30,21 @@ namespace buBilet
            Application.Exit();
         }
 
+        private void Login_loginButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_showPswd_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Login_showPswd.Checked)
+            {
+                Login_pswd.UseSystemPasswordChar = false;
+            }
+            else 
+            {
+                Login_pswd.UseSystemPasswordChar=true;
+            }
+        }
     }
 }
