@@ -40,6 +40,8 @@ namespace buBilet
         {
             string name_surname, tcId, gender, username, password, password_confirm;
             bool isAdmin = false;
+            
+
 
             name_surname = Register_nameSurname.Text;
             tcId = Register_tcID.Text;
@@ -47,6 +49,7 @@ namespace buBilet
             username = Register_username.Text;
             password = Register_pswd.Text;
             password_confirm = Register_pswdConfirm.Text;
+
 
             string[] checkList = {name_surname, tcId, gender, username, password, password_confirm};
             bool AnyNulls = false;
@@ -81,6 +84,7 @@ namespace buBilet
                     Register_pswd.Text = "";
                     Register_pswdConfirm.Text = "";
                 }
+                
                 else 
                 {
                     string query = "INSERT INTO Users(name_surname, tcId, gender, username, password, isAdmin) VALUES(@name_surname, @tcId, @gender, @username, @password, @isAdmin)";
@@ -129,6 +133,8 @@ namespace buBilet
                 Register_pswd.UseSystemPasswordChar = true;
                 Register_pswdConfirm.UseSystemPasswordChar = true;
             }
-        }        
+        }
+
+
     }
 }
