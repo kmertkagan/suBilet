@@ -24,3 +24,5 @@ C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\refint\suBilet.dll
 C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.pdb
 C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.genruntimeconfig.cache
 C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\ref\suBilet.dll
+C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.frmMain.resources
+C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.frmAdminMain.resources

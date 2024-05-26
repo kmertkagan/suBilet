@@ -84,7 +84,14 @@ namespace buBilet
                     Register_pswd.Text = "";
                     Register_pswdConfirm.Text = "";
                 }
-                
+                else if ( DbCheck(tcId, username) == true) 
+                {
+                    MessageBox.Show("Bu kullanıcı sistemde mevcut.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Register_pswd.Text = "";
+                    Register_pswdConfirm.Text = "";
+                }
+
+
                 else 
                 {
                     string query = "INSERT INTO Users(name_surname, tcId, gender, username, password, isAdmin) VALUES(@name_surname, @tcId, @gender, @username, @password, @isAdmin)";
@@ -120,6 +127,26 @@ namespace buBilet
             
 
         }
+
+        public bool DbCheck(string tcId, string username)
+        {
+            string query = $"SELECT * FROM Users WHERE tcId = @tcId OR username = @username";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            cmd.Parameters.AddWithValue("@tcId", tcId);
+            cmd.Parameters.AddWithValue("@username", username);
+
+            SqlDataAdapter recievedData = new SqlDataAdapter(cmd);
+            DataTable TempDT = new DataTable();
+
+            recievedData.Fill(TempDT);
+
+            if (TempDT.Rows.Count > 0) { return true;}
+            else { return false; }
+
+        }
+
+
 
         private void Register_showPswd_CheckedChanged(object sender, EventArgs e)
         {

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.VisualBasic;
+using suBilet;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace buBilet
 {
@@ -30,15 +33,19 @@ namespace buBilet
 
         private void xLabel_Click(object sender, EventArgs e)
         {
-           Application.Exit();
+            Application.Exit();
         }
 
+
+        // using in mainpage
+        public DataRow userRow { get; set; }
         private void Login_loginButton_Click(object sender, EventArgs e)
         {
             string username, password;
 
             username = Login_username.Text;
             password = Login_pswd.Text;
+                        
 
             try
             {
@@ -51,17 +58,35 @@ namespace buBilet
                 SqlDataAdapter recievedData = new SqlDataAdapter(cmd);
                 DataTable TempDT = new DataTable();
 
+
                 recievedData.Fill(TempDT);
                 
                 if (TempDT.Rows.Count > 0)
                 {
-                    MessageBox.Show($"Hoşgeldiniz {username}", "Giriş Başarılı", MessageBoxButtons.OK);
+                    
+                     
+                    userRow = TempDT.Rows[0];
+
+                    MessageBox.Show($"Hoşgeldiniz {userRow["username"]}", "Giriş Başarılı", MessageBoxButtons.OK);
+                    
+                    if (Convert.ToBoolean(userRow["isAdmin"]) == true) 
+                    {
+                        frmAdminMain transfrm = new frmAdminMain();
+                        transfrm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        frmMain transfrm = new frmMain();
+                        transfrm.Id = Convert.ToString(userRow["id"]);
+                        transfrm.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Giriş Hatası", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             catch 
             {
@@ -84,5 +109,7 @@ namespace buBilet
                 Login_pswd.UseSystemPasswordChar=true;
             }
         }
+
+                    
     }
 }
