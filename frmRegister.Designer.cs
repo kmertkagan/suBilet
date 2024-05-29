@@ -47,32 +47,34 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.xRegister_label = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Register_nameSurname
             // 
-            this.Register_nameSurname.Location = new System.Drawing.Point(235, 52);
+            this.Register_nameSurname.Location = new System.Drawing.Point(114, 49);
             this.Register_nameSurname.Name = "Register_nameSurname";
             this.Register_nameSurname.Size = new System.Drawing.Size(173, 27);
             this.Register_nameSurname.TabIndex = 0;
             // 
             // Register_tcID
             // 
-            this.Register_tcID.Location = new System.Drawing.Point(234, 95);
+            this.Register_tcID.Location = new System.Drawing.Point(115, 95);
             this.Register_tcID.Name = "Register_tcID";
             this.Register_tcID.Size = new System.Drawing.Size(173, 27);
             this.Register_tcID.TabIndex = 1;
             // 
             // Register_username
             // 
-            this.Register_username.Location = new System.Drawing.Point(234, 233);
+            this.Register_username.Location = new System.Drawing.Point(115, 236);
             this.Register_username.Name = "Register_username";
             this.Register_username.Size = new System.Drawing.Size(173, 27);
             this.Register_username.TabIndex = 2;
             // 
             // Register_pswd
             // 
-            this.Register_pswd.Location = new System.Drawing.Point(235, 281);
+            this.Register_pswd.Location = new System.Drawing.Point(113, 284);
             this.Register_pswd.Name = "Register_pswd";
             this.Register_pswd.Size = new System.Drawing.Size(173, 27);
             this.Register_pswd.TabIndex = 3;
@@ -80,7 +82,7 @@
             // 
             // Register_pswdConfirm
             // 
-            this.Register_pswdConfirm.Location = new System.Drawing.Point(235, 324);
+            this.Register_pswdConfirm.Location = new System.Drawing.Point(115, 331);
             this.Register_pswdConfirm.Name = "Register_pswdConfirm";
             this.Register_pswdConfirm.Size = new System.Drawing.Size(173, 27);
             this.Register_pswdConfirm.TabIndex = 4;
@@ -88,29 +90,30 @@
             // 
             // Register_signUpButton
             // 
-            this.Register_signUpButton.Location = new System.Drawing.Point(234, 409);
+            this.Register_signUpButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Register_signUpButton.Location = new System.Drawing.Point(9, 407);
             this.Register_signUpButton.Name = "Register_signUpButton";
             this.Register_signUpButton.Size = new System.Drawing.Size(173, 29);
             this.Register_signUpButton.TabIndex = 5;
             this.Register_signUpButton.Text = "Kayıt Ol";
-            this.Register_signUpButton.UseVisualStyleBackColor = true;
+            this.Register_signUpButton.UseVisualStyleBackColor = false;
             this.Register_signUpButton.Click += new System.EventHandler(this.Register_signUpButton_Click);
             // 
             // Register_showPswd
             // 
             this.Register_showPswd.AutoSize = true;
-            this.Register_showPswd.Location = new System.Drawing.Point(235, 368);
+            this.Register_showPswd.Location = new System.Drawing.Point(12, 377);
             this.Register_showPswd.Name = "Register_showPswd";
-            this.Register_showPswd.Size = new System.Drawing.Size(111, 24);
+            this.Register_showPswd.Size = new System.Drawing.Size(119, 24);
             this.Register_showPswd.TabIndex = 6;
-            this.Register_showPswd.Text = "Şifre Göster:";
+            this.Register_showPswd.Text = "Parola Göster";
             this.Register_showPswd.UseVisualStyleBackColor = true;
             this.Register_showPswd.CheckedChanged += new System.EventHandler(this.Register_showPswd_CheckedChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(133, 55);
+            this.label1.Location = new System.Drawing.Point(12, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 7;
@@ -119,7 +122,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(133, 98);
+            this.label2.Location = new System.Drawing.Point(12, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 20);
             this.label2.TabIndex = 8;
@@ -128,7 +131,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(138, 236);
+            this.label3.Location = new System.Drawing.Point(12, 236);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 20);
             this.label3.TabIndex = 9;
@@ -137,7 +140,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(138, 284);
+            this.label4.Location = new System.Drawing.Point(12, 284);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 20);
             this.label4.TabIndex = 10;
@@ -146,7 +149,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(138, 327);
+            this.label5.Location = new System.Drawing.Point(12, 334);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 20);
             this.label5.TabIndex = 11;
@@ -155,7 +158,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(138, 452);
+            this.label6.Location = new System.Drawing.Point(9, 452);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 20);
             this.label6.TabIndex = 12;
@@ -164,7 +167,7 @@
             // register_to_login
             // 
             this.register_to_login.AutoSize = true;
-            this.register_to_login.Location = new System.Drawing.Point(320, 452);
+            this.register_to_login.Location = new System.Drawing.Point(191, 452);
             this.register_to_login.Name = "register_to_login";
             this.register_to_login.Size = new System.Drawing.Size(66, 20);
             this.register_to_login.TabIndex = 13;
@@ -179,7 +182,7 @@
             this.Register_gender.Items.AddRange(new object[] {
             "Erkek",
             "Kadın"});
-            this.Register_gender.Location = new System.Drawing.Point(235, 141);
+            this.Register_gender.Location = new System.Drawing.Point(114, 138);
             this.Register_gender.Name = "Register_gender";
             this.Register_gender.Size = new System.Drawing.Size(172, 28);
             this.Register_gender.TabIndex = 14;
@@ -187,7 +190,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(166, 141);
+            this.label7.Location = new System.Drawing.Point(12, 141);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 20);
             this.label7.TabIndex = 15;
@@ -198,7 +201,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(253, 19);
+            this.label8.Location = new System.Drawing.Point(78, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(137, 20);
             this.label8.TabIndex = 16;
@@ -208,7 +211,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(253, 197);
+            this.label9.Location = new System.Drawing.Point(78, 195);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(142, 20);
             this.label9.TabIndex = 17;
@@ -219,19 +222,28 @@
             this.xRegister_label.AutoSize = true;
             this.xRegister_label.Cursor = System.Windows.Forms.Cursors.Hand;
             this.xRegister_label.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.xRegister_label.Location = new System.Drawing.Point(533, 9);
+            this.xRegister_label.Location = new System.Drawing.Point(213, 9);
             this.xRegister_label.Name = "xRegister_label";
             this.xRegister_label.Size = new System.Drawing.Size(26, 28);
             this.xRegister_label.TabIndex = 18;
             this.xRegister_label.Text = "X";
             this.xRegister_label.Click += new System.EventHandler(this.xRegister_label_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.xRegister_label);
+            this.panel1.Location = new System.Drawing.Point(320, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(252, 503);
+            this.panel1.TabIndex = 19;
+            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 503);
-            this.Controls.Add(this.xRegister_label);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -254,6 +266,8 @@
             this.Name = "frmRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRegister";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +294,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label xRegister_label;
+        private System.Windows.Forms.Panel panel1;
     }
 }

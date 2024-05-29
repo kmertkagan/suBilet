@@ -37,6 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.login_to_register = new System.Windows.Forms.LinkLabel();
             this.xLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Login_username
@@ -85,12 +88,14 @@
             // 
             // Login_loginButton
             // 
+            this.Login_loginButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Login_loginButton.Location = new System.Drawing.Point(44, 329);
+            this.Login_loginButton.Margin = new System.Windows.Forms.Padding(2);
             this.Login_loginButton.Name = "Login_loginButton";
-            this.Login_loginButton.Size = new System.Drawing.Size(94, 29);
+            this.Login_loginButton.Size = new System.Drawing.Size(150, 29);
             this.Login_loginButton.TabIndex = 5;
             this.Login_loginButton.Text = "Giriş Yap";
-            this.Login_loginButton.UseVisualStyleBackColor = true;
+            this.Login_loginButton.UseVisualStyleBackColor = false;
             this.Login_loginButton.Click += new System.EventHandler(this.Login_loginButton_Click);
             // 
             // label3
@@ -118,19 +123,39 @@
             this.xLabel.AutoSize = true;
             this.xLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.xLabel.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.xLabel.Location = new System.Drawing.Point(533, 9);
+            this.xLabel.Location = new System.Drawing.Point(245, 19);
             this.xLabel.Name = "xLabel";
             this.xLabel.Size = new System.Drawing.Size(26, 28);
             this.xLabel.TabIndex = 8;
             this.xLabel.Text = "X";
             this.xLabel.Click += new System.EventHandler(this.xLabel_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.xLabel);
+            this.panel1.Location = new System.Drawing.Point(288, -10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(292, 524);
+            this.panel1.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(3, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(276, 32);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Otobüs Bilet Uygulaması";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 503);
-            this.Controls.Add(this.xLabel);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.login_to_register);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Login_loginButton);
@@ -144,6 +169,8 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +187,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel login_to_register;
         private System.Windows.Forms.Label xLabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
     }
 }

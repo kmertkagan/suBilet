@@ -36,6 +36,7 @@
             // 
             // dateTimePicker
             // 
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker.Location = new System.Drawing.Point(12, 23);
             this.dateTimePicker.MinDate = new System.DateTime(2024, 5, 27, 0, 58, 28, 0);
             this.dateTimePicker.Name = "dateTimePicker";

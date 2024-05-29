@@ -26,3 +26,5 @@ C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.genruntimec
 C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\ref\suBilet.dll
 C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.frmMain.resources
 C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.frmAdminMain.resources
+C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.Properties.Resources.resources
+C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.frmCreateBusTrip.resources

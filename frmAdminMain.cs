@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,14 @@ namespace suBilet
         public frmAdminMain()
         {
             InitializeComponent();
+        }
+        SqlConnection connection = new SqlConnection(@"Data Source=MERT\SQLEXPRESS;Initial Catalog=buBilet;Integrated Security=True");
+        // identifying user's id num whose logged in
+        internal string Id { get; set; }
+        private void createBusTrip_Click(object sender, EventArgs e)
+        {
+            frmCreateBusTrip cbt = new frmCreateBusTrip();
+            cbt.Show();
         }
     }
 }

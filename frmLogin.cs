@@ -92,10 +92,6 @@ namespace buBilet
             {
                 MessageBox.Show("Somethings went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally 
-            { 
-                connection.Close();
-            }
         }
 
         private void Login_showPswd_CheckedChanged(object sender, EventArgs e)
@@ -110,6 +106,5 @@ namespace buBilet
             }
         }
 
-                    
     }
 }
