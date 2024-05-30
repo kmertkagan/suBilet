@@ -17,10 +17,11 @@ namespace suBilet
         public frmCreateBusTrip()
         {
             InitializeComponent();////
-            //AMK
         }
 
-        SqlConnection connection = new SqlConnection(@"Data Source=MERT\SQLEXPRESS;Initial Catalog=buBilet;Integrated Security=True");
+        
+        SqlConfig config = new SqlConfig();
+        
         private void frmCreateBusTrip_Load(object sender, EventArgs e)
         {
             datePicker.MinDate= DateTime.Now;
@@ -31,7 +32,7 @@ namespace suBilet
 
         private void saveTripButton_Click(object sender, EventArgs e)
         {
-            connection.Open();
+            config.ToConnect()
 
             string fromcity = fromCityBox.Text;
             string tocity = toCityBox.Text;
@@ -86,7 +87,7 @@ namespace suBilet
             }
             finally 
             { 
-                connection.Close();
+                config.ToConnect().Close();
             }
         }
 

@@ -22,7 +22,7 @@ namespace buBilet
             InitializeComponent();
         }
 
-        SqlConnection connection = new SqlConnection(@"Data Source=MERT\SQLEXPRESS;Initial Catalog=buBilet;Integrated Security=True");
+        SqlConfig config = new SqlConfig();
 
         private void login_to_register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -41,6 +41,8 @@ namespace buBilet
         public DataRow userRow { get; set; }
         private void Login_loginButton_Click(object sender, EventArgs e)
         {
+            config.ToConnect();
+
             string username, password;
 
             username = Login_username.Text;
@@ -50,7 +52,7 @@ namespace buBilet
             try
             {
                 string query = "SELECT * FROM Users WHERE username = @username AND password = @password";
-                SqlCommand cmd = new SqlCommand(query, connection);
+                SqlCommand cmd = new SqlCommand(query, config.ToConnect());
 
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);

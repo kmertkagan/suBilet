@@ -13,6 +13,8 @@ using System.Security.Cryptography; // for password
 using System.Data.SqlTypes;
 using System.Drawing.Imaging;
 using System.ComponentModel.Design.Serialization;
+using suBilet;
+using System.Security.Cryptography.Xml;
 
 namespace buBilet
 {
@@ -22,8 +24,8 @@ namespace buBilet
         {
             InitializeComponent();
         }
-        SqlConnection connection = new SqlConnection(@"Data Source=MERT\SQLEXPRESS;Initial Catalog=buBilet;Integrated Security=True");
 
+        SqlConfig config = new SqlConfig();
         private void register_to_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmLogin sform = new frmLogin();
@@ -57,7 +59,7 @@ namespace buBilet
 
             try
             {
-                connection.Open();
+                config.ToConnect();
 
                 foreach (string i in checkList)
                 {
@@ -95,7 +97,7 @@ namespace buBilet
                 else 
                 {
                     string query = "INSERT INTO Users(name_surname, tcId, gender, username, password, isAdmin) VALUES(@name_surname, @tcId, @gender, @username, @password, @isAdmin)";
-                    SqlCommand cmd = new SqlCommand(query, connection);
+                    SqlCommand cmd = new SqlCommand(query, config.ToConnect());
 
                     cmd.Parameters.AddWithValue("@name_surname", name_surname);
                     cmd.Parameters.AddWithValue("@tcId", tcId);
@@ -122,7 +124,7 @@ namespace buBilet
             }
             finally 
             { 
-                connection.Close();
+                config.ToConnect().Close();
             }
             
 
@@ -131,7 +133,7 @@ namespace buBilet
         public bool DbCheck(string tcId, string username)
         {
             string query = $"SELECT * FROM Users WHERE tcId = @tcId OR username = @username";
-            SqlCommand cmd = new SqlCommand(query, connection);
+            SqlCommand cmd = new SqlCommand(query, config.ToConnect());
 
             cmd.Parameters.AddWithValue("@tcId", tcId);
             cmd.Parameters.AddWithValue("@username", username);
