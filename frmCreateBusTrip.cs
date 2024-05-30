@@ -32,7 +32,7 @@ namespace suBilet
 
         private void saveTripButton_Click(object sender, EventArgs e)
         {
-            config.ToConnect()
+            config.ToConnect();
 
             string fromcity = fromCityBox.Text;
             string tocity = toCityBox.Text;
@@ -66,20 +66,24 @@ namespace suBilet
 
             try
             {
-                string query = "INSERT INTO Buses(fromCity, toCity, departureDate, departureTime, availableSeat, company)" +
-                "VALUES(@fromcity, @tocity, @departuredate, @departuretime, @availableseat, @company)";
+                if (!AnyProblemWithInputs())
+                {
 
-                SqlCommand cmd = new SqlCommand(query, connection);
+                    string query = "INSERT INTO Buses(fromCity, toCity, departureDate, departureTime, availableSeat, company)" +
+                    "VALUES(@fromcity, @tocity, @departuredate, @departuretime, @availableseat, @company)";
 
-                cmd.Parameters.AddWithValue("@fromcity", fromcity);
-                cmd.Parameters.AddWithValue("@tocity", tocity);
-                cmd.Parameters.AddWithValue("@departuredate", departuredate.ToString("yyyy-MM-dd") );
-                cmd.Parameters.AddWithValue("@departuretime", departuretime.ToString("HH:mm:ss") );
-                cmd.Parameters.AddWithValue("@availableseat", availableseat);
-                cmd.Parameters.AddWithValue("@company", company);
+                    SqlCommand cmd = new SqlCommand(query, config.ToConnect());
 
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Sefer Başarıyla Kaydedildi.", "Başarlı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cmd.Parameters.AddWithValue("@fromcity", fromcity);
+                    cmd.Parameters.AddWithValue("@tocity", tocity);
+                    cmd.Parameters.AddWithValue("@departuredate", departuredate.ToString("yyyy-MM-dd") );
+                    cmd.Parameters.AddWithValue("@departuretime", departuretime.ToString("HH:mm:ss") );
+                    cmd.Parameters.AddWithValue("@availableseat", availableseat);
+                    cmd.Parameters.AddWithValue("@company", company);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Sefer Başarıyla Kaydedildi.", "Başarlı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch 
             {
@@ -95,5 +99,27 @@ namespace suBilet
         {
             this.Close();
         }
+
+
+        private bool AnyProblemWithInputs()
+        {
+            string[] inputs = {fromCityBox.Text, toCityBox.Text, datePicker.Text, timePicker.Text, companiesBox.Text};
+            for (int i = 0 ;i <= inputs.Length; i++) 
+            {
+                if (String.IsNullOrEmpty(inputs[i]))
+                {
+                    MessageBox.Show("Tüm Değerleri Giriniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
+                    return true;             
+                }
+
+                else if (fromCityBox.Text == toCityBox.Text) 
+                {
+                    MessageBox.Show("Şehirler Aynı Olamaz!!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }

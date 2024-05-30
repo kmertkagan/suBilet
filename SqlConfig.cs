@@ -9,9 +9,9 @@ namespace suBilet
 {
     internal class SqlConfig
     {
-        static internal SqlConnection ToConnect() 
+        internal SqlConnection ToConnect() 
         { 
-            SqlConnection connection = new SqlConnection(@"Data Source=MERT\\SQLEXPRESS;Initial Catalog=buBilet;Integrated Security=True"); 
+            SqlConnection connection = new SqlConnection(@"Data Source=MERT\SQLEXPRESS;Initial Catalog=buBilet;Integrated Security=True"); 
             connection.Open();
             return connection;
         }
