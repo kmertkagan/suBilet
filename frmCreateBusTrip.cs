@@ -59,11 +59,7 @@ namespace suBilet
              * 
              * şeklinde ilerleyecektir.
              */
-<<<<<<< HEAD
 
-=======
-            //dfasdgsagasrgaegaegag
->>>>>>> 8365d5e571e6390779b46f571b3524c500b1f670
             int availableseat = 41;
 
             try
