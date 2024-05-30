@@ -17,6 +17,7 @@ namespace suBilet
         public frmCreateBusTrip()
         {
             InitializeComponent();////
+            //AMK
         }
 
         SqlConnection connection = new SqlConnection(@"Data Source=MERT\SQLEXPRESS;Initial Catalog=buBilet;Integrated Security=True");
