@@ -470,23 +470,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kmert\\.nuget\\packages\\": {},
+    "C:\\Users\\ibrah\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kmert\\source\\repos\\buBilet\\suBilet.csproj",
+      "projectUniqueName": "C:\\Users\\ibrah\\source\\repos\\suBilet\\suBilet.csproj",
       "projectName": "suBilet",
-      "projectPath": "C:\\Users\\kmert\\source\\repos\\buBilet\\suBilet.csproj",
-      "packagesPath": "C:\\Users\\kmert\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kmert\\source\\repos\\buBilet\\obj\\",
+      "projectPath": "C:\\Users\\ibrah\\source\\repos\\suBilet\\suBilet.csproj",
+      "packagesPath": "C:\\Users\\ibrah\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ibrah\\source\\repos\\suBilet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\kmert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ibrah\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -508,6 +508,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -538,7 +543,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
