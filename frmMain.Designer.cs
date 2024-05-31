@@ -32,12 +32,19 @@
             this.FromCity = new System.Windows.Forms.ComboBox();
             this.ToCity = new System.Windows.Forms.ComboBox();
             this.searchButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.userinfoLabel = new System.Windows.Forms.Label();
+            this.bussesDgw = new System.Windows.Forms.DataGridView();
+            this.businfoLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.bussesDgw)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker.Location = new System.Drawing.Point(12, 23);
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker.Location = new System.Drawing.Point(12, 80);
             this.dateTimePicker.MinDate = new System.DateTime(2024, 5, 27, 0, 58, 28, 0);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(250, 27);
@@ -131,7 +138,7 @@
             "Yalova",
             "Yozgat",
             "Zonguldak"});
-            this.FromCity.Location = new System.Drawing.Point(306, 22);
+            this.FromCity.Location = new System.Drawing.Point(284, 79);
             this.FromCity.Name = "FromCity";
             this.FromCity.Size = new System.Drawing.Size(151, 28);
             this.FromCity.TabIndex = 1;
@@ -223,25 +230,93 @@
             "Yalova",
             "Yozgat",
             "Zonguldak"});
-            this.ToCity.Location = new System.Drawing.Point(501, 22);
+            this.ToCity.Location = new System.Drawing.Point(471, 79);
             this.ToCity.Name = "ToCity";
             this.ToCity.Size = new System.Drawing.Size(151, 28);
             this.ToCity.TabIndex = 2;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(12, 77);
+            this.searchButton.Location = new System.Drawing.Point(12, 123);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(149, 29);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Ara";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Tarih:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(284, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Nereden:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(471, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Nereye:";
+            // 
+            // userinfoLabel
+            // 
+            this.userinfoLabel.AutoSize = true;
+            this.userinfoLabel.Location = new System.Drawing.Point(12, 9);
+            this.userinfoLabel.Name = "userinfoLabel";
+            this.userinfoLabel.Size = new System.Drawing.Size(0, 20);
+            this.userinfoLabel.TabIndex = 7;
+            // 
+            // bussesDgw
+            // 
+            this.bussesDgw.AllowUserToAddRows = false;
+            this.bussesDgw.AllowUserToDeleteRows = false;
+            this.bussesDgw.AllowUserToResizeColumns = false;
+            this.bussesDgw.AllowUserToResizeRows = false;
+            this.bussesDgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bussesDgw.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bussesDgw.Location = new System.Drawing.Point(12, 204);
+            this.bussesDgw.Name = "bussesDgw";
+            this.bussesDgw.RowHeadersWidth = 51;
+            this.bussesDgw.RowTemplate.Height = 29;
+            this.bussesDgw.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bussesDgw.ShowEditingIcon = false;
+            this.bussesDgw.Size = new System.Drawing.Size(776, 217);
+            this.bussesDgw.TabIndex = 8;
+            // 
+            // businfoLabel
+            // 
+            this.businfoLabel.AutoSize = true;
+            this.businfoLabel.Location = new System.Drawing.Point(12, 168);
+            this.businfoLabel.Name = "businfoLabel";
+            this.businfoLabel.Size = new System.Drawing.Size(115, 20);
+            this.businfoLabel.TabIndex = 9;
+            this.businfoLabel.Text = "Mevcut Seferler:";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.businfoLabel);
+            this.Controls.Add(this.bussesDgw);
+            this.Controls.Add(this.userinfoLabel);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.ToCity);
             this.Controls.Add(this.FromCity);
@@ -249,7 +324,9 @@
             this.Name = "frmMain";
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bussesDgw)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -259,5 +336,11 @@
         private System.Windows.Forms.ComboBox FromCity;
         private System.Windows.Forms.ComboBox ToCity;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label userinfoLabel;
+        private System.Windows.Forms.DataGridView bussesDgw;
+        private System.Windows.Forms.Label businfoLabel;
     }
 }

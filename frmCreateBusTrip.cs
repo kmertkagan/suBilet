@@ -77,7 +77,7 @@ namespace suBilet
                     cmd.Parameters.AddWithValue("@fromcity", fromcity);
                     cmd.Parameters.AddWithValue("@tocity", tocity);
                     cmd.Parameters.AddWithValue("@departuredate", departuredate.ToString("yyyy-MM-dd") );
-                    cmd.Parameters.AddWithValue("@departuretime", departuretime.ToString("HH:mm:ss") );
+                    cmd.Parameters.AddWithValue("@departuretime", departuretime.ToString("HH:mm") );
                     cmd.Parameters.AddWithValue("@availableseat", availableseat);
                     cmd.Parameters.AddWithValue("@company", company);
 
@@ -104,7 +104,7 @@ namespace suBilet
         private bool AnyProblemWithInputs()
         {
             string[] inputs = {fromCityBox.Text, toCityBox.Text, datePicker.Text, timePicker.Text, companiesBox.Text};
-            for (int i = 0 ;i <= inputs.Length; i++) 
+            for (int i = 0 ;i < inputs.Length; i++) 
             {
                 if (String.IsNullOrEmpty(inputs[i]))
                 {

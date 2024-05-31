@@ -11,6 +11,7 @@ namespace suBilet
     {
         internal SqlConnection ToConnect() 
         { 
+            // kendi DBconnection string'inizi kullanınız.
             SqlConnection connection = new SqlConnection(@"Data Source=MERT\SQLEXPRESS;Initial Catalog=buBilet;Integrated Security=True"); 
             connection.Open();
             return connection;
