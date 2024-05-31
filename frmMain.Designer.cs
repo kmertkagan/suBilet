@@ -38,6 +38,7 @@
             this.userinfoLabel = new System.Windows.Forms.Label();
             this.bussesDgw = new System.Windows.Forms.DataGridView();
             this.businfoLabel = new System.Windows.Forms.Label();
+            this.clearButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bussesDgw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -296,6 +297,7 @@
             this.bussesDgw.ShowEditingIcon = false;
             this.bussesDgw.Size = new System.Drawing.Size(776, 217);
             this.bussesDgw.TabIndex = 8;
+            this.bussesDgw.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bussesDgw_CellContentClick);
             // 
             // businfoLabel
             // 
@@ -306,11 +308,22 @@
             this.businfoLabel.TabIndex = 9;
             this.businfoLabel.Text = "Mevcut Seferler:";
             // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(167, 123);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(149, 29);
+            this.clearButton.TabIndex = 10;
+            this.clearButton.Text = "Temizle";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.businfoLabel);
             this.Controls.Add(this.bussesDgw);
             this.Controls.Add(this.userinfoLabel);
@@ -342,5 +355,6 @@
         private System.Windows.Forms.Label userinfoLabel;
         private System.Windows.Forms.DataGridView bussesDgw;
         private System.Windows.Forms.Label businfoLabel;
+        private System.Windows.Forms.Button clearButton;
     }
 }

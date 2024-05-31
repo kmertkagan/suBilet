@@ -28,3 +28,4 @@ C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.frmMain.res
 C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.frmAdminMain.resources
 C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.Properties.Resources.resources
 C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.frmCreateBusTrip.resources
+C:\Users\kmert\source\repos\buBilet\obj\Debug\net5.0-windows\suBilet.frmBusDetail.resources

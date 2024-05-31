@@ -44,8 +44,8 @@ namespace suBilet
             try
             {
                 // for available buses
-                string queryforbuses = "SELECT fromCity AS Nereden, toCity AS Nereye, " +
-                    "departureDate AS [Kalkış Tarihi], DepartureTime AS [Kalkış Saati], availableSeat AS [Kalan Koltuk], " +
+                string queryforbuses = "SELECT busId, fromCity AS Nereden, toCity AS Nereye, " +
+                    "CONVERT(VARCHAR, departureDate, 105) AS [Kalkış Tarihi], CONVERT(VARCHAR(5), departureTime, 108) AS [Kalkış Saati], availableSeat AS [Kalan Koltuk], " +
                     "company AS Firma FROM Buses";
                 SqlCommand cmdbus = new SqlCommand(queryforbuses, config.ToConnect());
                 SqlDataAdapter adapterbus = new SqlDataAdapter(cmdbus);
@@ -61,7 +61,8 @@ namespace suBilet
 
                 // disable editing;
                 bussesDgw.ReadOnly = true;
-                // bussesDgw.Columns["Otobüs Numarası"].Visible = true; 
+                // busId is not visible;                
+                bussesDgw.Columns["BusId"].Visible = false; 
 
             }
             catch 
@@ -69,11 +70,6 @@ namespace suBilet
                 MessageBox.Show("Somethings went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
-            finally
-            {
-                config.ToConnect().Close();
-            }
-
         }
         private void searchButton_Click(object sender, EventArgs e)
         {
@@ -85,7 +81,7 @@ namespace suBilet
 
             // i dunno how i use datagridview so sending query to db again :(
             string queryforbuses = "SELECT fromCity AS Nereden, toCity AS Nereye, " +
-                    "departureDate AS [Kalkış Tarihi], DepartureTime AS [Kalkış Saati], availableSeat AS [Kalan Koltuk], " +
+                    "departureDate AS [Kalkış Tarihi], CONVERT(VARCHAR(5), departureTime, 108) AS [Kalkış Saati], availableSeat AS [Kalan Koltuk], " +
                     "company AS Firma FROM Buses WHERE departureDate = @date AND fromCity = @fromcity AND toCity = @tocity";
             SqlCommand cmdbus = new SqlCommand(queryforbuses, config.ToConnect());
             cmdbus.Parameters.AddWithValue("@date", date);
@@ -97,7 +93,29 @@ namespace suBilet
             DataTable dtbus = new DataTable();
 
             adapterbus.Fill(dtbus);
+            businfoLabel.Text = $"{fromcity} - {tocity} Seferleri:";
             bussesDgw.DataSource = dtbus;
+
+            if (bussesDgw.RowCount == 0)
+            {
+                businfoLabel.Text = $"{fromcity} - {tocity} Seferi Bulunamadı :("; 
+            }
+
+        }
+
+        private void bussesDgw_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmBusDetail busDetail = new frmBusDetail();
+
+            busDetail.busId = bussesDgw.CurrentRow.Cells[0].Value.ToString();
+            busDetail.Id = Id;
+            busDetail.Show();    
+        
+        }
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            frmMain_Load(sender, e);
+            businfoLabel.Text = "Mevcut Seferler:";
         }
     }
 }
