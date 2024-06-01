@@ -108,6 +108,7 @@ namespace suBilet
             frmBusDetail busDetail = new frmBusDetail();
 
             busDetail.busId = bussesDgw.CurrentRow.Cells[0].Value.ToString();
+            busDetail.availableSeat = bussesDgw.CurrentRow.Cells[5].Value.ToString();
             busDetail.Id = Id;
             busDetail.Show();    
         

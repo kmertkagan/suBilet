@@ -60,6 +60,7 @@
             this.deleteBusTrip.TabIndex = 2;
             this.deleteBusTrip.Text = "Sefer Sil";
             this.deleteBusTrip.UseVisualStyleBackColor = true;
+            this.deleteBusTrip.Click += new System.EventHandler(this.deleteBusTrip_Click);
             // 
             // frmAdminMain
             // 

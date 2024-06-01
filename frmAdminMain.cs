@@ -28,5 +28,10 @@ namespace suBilet
             frmCreateBusTrip cbt = new frmCreateBusTrip();
             cbt.Show();
         }
+
+        private void deleteBusTrip_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

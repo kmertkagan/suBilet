@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kOTmiXwiuK7bXk2rftGyzmKgws3MLuZ7jFlLK1tR+vYbGUpCPGwpkKKvHmOKkbn12r6T69mQfVLLxSrrLgin+A==",
+  "dgSpecHash": "kKmKD3LfmjuvG4ySVAn40YZM1O63pjj1Ui2Aqv/oAQOq6TWhi6drreq3X2fWjFiDCzMiNyPZvRO0vw3XX5CJfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kmert\\source\\repos\\buBilet\\suBilet.csproj",
+  "projectFilePath": "C:\\Users\\kmert\\source\\repos\\suBilet\\suBilet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kmert\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\kmert\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

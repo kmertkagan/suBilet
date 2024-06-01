@@ -101,6 +101,7 @@
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Vazgeç";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // label1
             // 

@@ -476,11 +476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kmert\\source\\repos\\buBilet\\suBilet.csproj",
+      "projectUniqueName": "C:\\Users\\kmert\\source\\repos\\suBilet\\suBilet.csproj",
       "projectName": "suBilet",
-      "projectPath": "C:\\Users\\kmert\\source\\repos\\buBilet\\suBilet.csproj",
+      "projectPath": "C:\\Users\\kmert\\source\\repos\\suBilet\\suBilet.csproj",
       "packagesPath": "C:\\Users\\kmert\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kmert\\source\\repos\\buBilet\\obj\\",
+      "outputPath": "C:\\Users\\kmert\\source\\repos\\suBilet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
