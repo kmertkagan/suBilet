@@ -39,6 +39,8 @@
             this.bussesDgw = new System.Windows.Forms.DataGridView();
             this.businfoLabel = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LogoutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bussesDgw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,7 +141,7 @@
             "Yalova",
             "Yozgat",
             "Zonguldak"});
-            this.FromCity.Location = new System.Drawing.Point(284, 79);
+            this.FromCity.Location = new System.Drawing.Point(326, 79);
             this.FromCity.Name = "FromCity";
             this.FromCity.Size = new System.Drawing.Size(151, 28);
             this.FromCity.TabIndex = 1;
@@ -231,7 +233,7 @@
             "Yalova",
             "Yozgat",
             "Zonguldak"});
-            this.ToCity.Location = new System.Drawing.Point(471, 79);
+            this.ToCity.Location = new System.Drawing.Point(546, 79);
             this.ToCity.Name = "ToCity";
             this.ToCity.Size = new System.Drawing.Size(151, 28);
             this.ToCity.TabIndex = 2;
@@ -258,7 +260,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(284, 45);
+            this.label2.Location = new System.Drawing.Point(326, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 5;
@@ -267,7 +269,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(471, 45);
+            this.label3.Location = new System.Drawing.Point(546, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 6;
@@ -295,7 +297,7 @@
             this.bussesDgw.RowTemplate.Height = 29;
             this.bussesDgw.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bussesDgw.ShowEditingIcon = false;
-            this.bussesDgw.Size = new System.Drawing.Size(776, 217);
+            this.bussesDgw.Size = new System.Drawing.Size(869, 217);
             this.bussesDgw.TabIndex = 8;
             this.bussesDgw.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bussesDgw_CellContentClick);
             // 
@@ -318,11 +320,35 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(963, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 28);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "X";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // LogoutButton
+            // 
+            this.LogoutButton.Location = new System.Drawing.Point(840, 472);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(149, 29);
+            this.LogoutButton.TabIndex = 12;
+            this.LogoutButton.Text = "Çıkış Yap";
+            this.LogoutButton.UseVisualStyleBackColor = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1001, 513);
+            this.Controls.Add(this.LogoutButton);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.businfoLabel);
             this.Controls.Add(this.bussesDgw);
@@ -356,5 +382,7 @@
         private System.Windows.Forms.DataGridView bussesDgw;
         private System.Windows.Forms.Label businfoLabel;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button LogoutButton;
     }
 }

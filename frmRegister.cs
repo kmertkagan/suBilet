@@ -26,6 +26,8 @@ namespace buBilet
         }
 
         SqlConfig config = new SqlConfig();
+        internal bool isAdmin { get; set; }
+
         private void register_to_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmLogin sform = new frmLogin();
@@ -41,7 +43,6 @@ namespace buBilet
         private void Register_signUpButton_Click(object sender, EventArgs e)
         {
             string name_surname, tcId, gender, username, password, password_confirm;
-            bool isAdmin = false;
             
 
 
@@ -104,7 +105,8 @@ namespace buBilet
                     cmd.Parameters.AddWithValue("@gender", gender);
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
-                    cmd.Parameters.AddWithValue("@isAdmin", isAdmin);
+                    if (isAdmin) { cmd.Parameters.AddWithValue("@isAdmin", isAdmin); }
+                    else { cmd.Parameters.AddWithValue("@isAdmin", false); }
 
                     int affectedRows = cmd.ExecuteNonQuery();
                     
