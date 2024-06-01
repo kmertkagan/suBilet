@@ -118,5 +118,17 @@ namespace suBilet
             frmMain_Load(sender, e);
             businfoLabel.Text = "Mevcut Seferler:";
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            frmLogin loggedout = new frmLogin();
+            loggedout.Show();
+            this.Close();
+        }
     }
 }

@@ -39,13 +39,13 @@ namespace suBilet
                 if (cntrls is Button possibleclickedbtns)
                 {
                     buttonClickCounts[possibleclickedbtns] = 0; // 
-                    possibleclickedbtns.Click += Button_Click;  // Butonun Click olayına Button_Click metodunu ekler.  
+                    possibleclickedbtns.Click += SeatButton_Click;  // Butonun Click olayına Button_Click metodunu ekler.  
 
                 }
             }
 
 
-
+            // LABELS
             string busquery = "SELECT busId, fromCity, toCity, CONVERT(VARCHAR, departureDate, 105) AS departureDate, " +
             "CONVERT(VARCHAR(5), departureTime, 108) AS departureTime, availableSeat, company FROM Buses WHERE busId = @busId";
             SqlCommand cmd = new SqlCommand(busquery, config.ToConnect());
@@ -108,7 +108,7 @@ namespace suBilet
             }
         }
         
-        private void Button_Click(object sender, EventArgs e)
+        private void SeatButton_Click(object sender, EventArgs e)
         {
             /*
              Button_Click metodu, bir butona tıklandığında çalışır.
